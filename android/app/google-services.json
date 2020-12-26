@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1030578760270",
+    "project_id": "wt-fb-test",
+    "storage_bucket": "wt-fb-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030578760270:android:8c7886edba27701d19f11f",
+        "android_client_info": {
+          "package_name": "com.technorivals.wtfbtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1030578760270-94upsreho3oqek1a1np7ggflt538hqhh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBU7LCvdPGiF8Z0Biw9Pw8SDinGPWvxrQU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1030578760270-94upsreho3oqek1a1np7ggflt538hqhh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
