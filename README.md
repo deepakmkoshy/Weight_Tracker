@@ -1,16 +1,17 @@
-# wtfbtest
+# Weight Tracker - Firebase
 
-A new Flutter project.
+This is a clone of the original weight tracker app which was built on Hive NoSQL DB.
 
-## Getting Started
+In this app, instead of Hive, I am using Firebase as backend.
 
-This project is a starting point for a Flutter application.
+## LOG
 
-A few resources to get you started if this is your first Flutter project:
+### 28-12-2020:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+After going through the official docs, I was able to implement firestore as the backend for this app. Even though everything still looks the same, the backend is firebase now. Next planned update is to implement google sign in, so that each user can have their own separate tracker. 
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## ToDo
+
+* Implement Google sign in
+* Update the sidebar to include the logged in user details
+* Add more features like BMI calculator etc(by using 3rd party API's)
