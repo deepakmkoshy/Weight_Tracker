@@ -1,7 +1,7 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wtfbtest/Graph.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:hive/hive.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -14,16 +14,63 @@ class _MyHomePageState extends State<MyHomePage> {
   bool _showValidationError = false;
   final _controller = TextEditingController();
   String _errorMsg;
+  CollectionReference users = FirebaseFirestore.instance.collection('users');
 
   @override
   void initState() {
     super.initState();
-
-    // if (box.isNotEmpty) //Updating the local weight list from the database
-    //   weight = box.get('weight');
-    // else
-    //   box.put('weight', weight);
+    initFs();
   }
+
+  Future<void> initFs() async {
+    users.doc('work').get().then((DocumentSnapshot documentSnapshot) {
+      if (documentSnapshot.exists) {
+        setState(() {
+          if (documentSnapshot.data().containsKey('wt')) {
+            print(List<String>.from(documentSnapshot.data()['wt']).runtimeType);
+            weight = List<String>.from(documentSnapshot.data()['wt']);
+          } else {
+            createFs();
+          }
+        });
+      }
+    });
+  }
+
+  Future<void> createFs() async {
+    users
+        .doc('work')
+        .set({"wt": weight})
+        .then((value) => print("Added new user"))
+        .catchError((onError) => print("Err"));
+  }
+
+  // Future<void> updateFs() async {
+  //   CollectionReference users = FirebaseFirestore.instance.collection('users');
+
+  //   users
+  //       .doc('work')
+  //       .set({"wt": weight})
+  //       .then((value) => print("Added new user"))
+  //       .catchError((onError) => print("Err"));
+  // }
+
+  // Future<void> clearFs() async {
+  //   users.doc('work').set().then((DocumentSnapshot documentSnapshot) {
+  //     if (documentSnapshot.exists) {
+  //       setState(() {
+  //         if (documentSnapshot.data().containsKey('wt'))
+
+  //         print("Works");
+  //       });
+  //     } else {
+  //       setState(() {
+  //         weight.add("5");
+  //         print("Not Works");
+  //       });
+  //     }
+  //   }).catchError((onError) => print("Err"));
+  // }
 
   @override
   void dispose() {
@@ -43,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
           _errorMsg = "Number should be less than 200";
         } else {
           weight.add(input);
-
+          createFs();
           // box.put('weight', weight);
         }
       } on Exception catch (e) {
@@ -70,6 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       weight.clear();
       _controller.clear();
+      createFs();
       // box.clear();
     });
   }
@@ -77,9 +125,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("WT Tracker-Firebase"),centerTitle: true),
-      
-          body: SingleChildScrollView(
+      appBar: AppBar(title: Text("WT Tracker-Firebase"), centerTitle: true),
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
