@@ -7,7 +7,6 @@ String name;
 String email;
 String imageUrl;
 auth.User newUser;
-String data = "Ho";
 auth.User userMain;
 
 Future<String> signInWithGoogle() async {
@@ -56,13 +55,10 @@ void signOutGoogle() async {
   _auth.signOut();
 }
 
-Future<void> getCurrentUser() async {
+Future<void> getCurrentUser() async { //For already logged in users
   userMain = _auth.currentUser;
-  String nam = userMain?.displayName ?? "Empty";
   if (userMain != null) {
     newUser = userMain;
     name = userMain.displayName;
-  }
-  print("User:" + nam);
-  // return '$userMain';
+  }  
 }

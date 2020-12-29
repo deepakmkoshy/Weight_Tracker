@@ -13,7 +13,6 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,6 +23,9 @@ class MyApp extends StatelessWidget {
         ),
         home: SplashScreen(
           seconds: 1,
+          photoSize: 40,
+        image: Image.asset('assets/icons/weight-scale.png'),
+
           title: Text(
             'Welcome to \nWeight Tracker',
             style: TextStyle(
@@ -32,6 +34,8 @@ class MyApp extends StatelessWidget {
                 color: Colors.white),
           ),
           backgroundColor: Colors.purple,
+
+          // For already logged in users, will skip the login page
           navigateAfterSeconds: (userMain != null) ? MyHomePage() : Login(),
         ));
   }

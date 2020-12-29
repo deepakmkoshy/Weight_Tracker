@@ -28,7 +28,6 @@ class _MyHomePageState extends State<MyHomePage> {
       if (documentSnapshot.exists) {
         setState(() {
           if (documentSnapshot.data().containsKey('wt')) {
-            print(List<String>.from(documentSnapshot.data()['wt']).runtimeType);
             weight = List<String>.from(documentSnapshot.data()['wt']);
           } else {
             createFs();
@@ -47,33 +46,6 @@ class _MyHomePageState extends State<MyHomePage> {
         .then((value) => print("Added new user"))
         .catchError((onError) => print("Err"));
   }
-
-  // Future<void> updateFs() async {
-  //   CollectionReference users = FirebaseFirestore.instance.collection('users');
-
-  //   users
-  //       .doc('work')
-  //       .set({"wt": weight})
-  //       .then((value) => print("Added new user"))
-  //       .catchError((onError) => print("Err"));
-  // }
-
-  // Future<void> clearFs() async {
-  //   users.doc('work').set().then((DocumentSnapshot documentSnapshot) {
-  //     if (documentSnapshot.exists) {
-  //       setState(() {
-  //         if (documentSnapshot.data().containsKey('wt'))
-
-  //         print("Works");
-  //       });
-  //     } else {
-  //       setState(() {
-  //         weight.add("5");
-  //         print("Not Works");
-  //       });
-  //     }
-  //   }).catchError((onError) => print("Err"));
-  // }
 
   @override
   void dispose() {
@@ -94,7 +66,6 @@ class _MyHomePageState extends State<MyHomePage> {
         } else {
           weight.add(input);
           createFs();
-          // box.put('weight', weight);
         }
       } on Exception catch (e) {
         print('Error: $e');
@@ -250,7 +221,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         colors: <Color>[
                           Colors.purple,
                           Colors.deepPurpleAccent,
-                          // Colors.deepOrange,
                         ],
                       ),
                     ),

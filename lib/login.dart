@@ -42,6 +42,7 @@ class _LoginState extends State<Login> {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Image(image: AssetImage("assets/icons/google_logo.png"), height: 35.0),
             Padding(
               padding: EdgeInsets.only(left: 10),
               child: Text(
@@ -68,7 +69,11 @@ class _LoginState extends State<Login> {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            FlutterLogo(size: 150),
+            
+            Image.asset("assets/icons/weight-scale.png", width: 100,),
+            SizedBox(height: 40,),
+
+            Text("LOGIN", style: TextStyle(fontSize: 30),),
             SizedBox(height: 50),
             googleLoginButton(),
           ],
