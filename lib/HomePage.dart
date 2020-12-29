@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wtfbtest/Graph.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:hive/hive.dart';
+import 'package:wtfbtest/auth.dart';
+import 'package:wtfbtest/login.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -131,6 +132,40 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: <Widget>[
+              Text(
+                'NAME',
+                style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black54),
+              ),
+              Text(
+                name,
+                style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.deepPurple,
+                    fontWeight: FontWeight.bold),
+              ),
+              RaisedButton(
+                onPressed: () {
+                  signOutGoogle();
+                  Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(builder: (context) {
+                    return Login();
+                  }), ModalRoute.withName('/'));
+                },
+                color: Colors.deepPurple,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'Sign Out',
+                    style: TextStyle(fontSize: 25, color: Colors.white),
+                  ),
+                ),
+                elevation: 5,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(40)),
+              ),
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
