@@ -24,7 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future<void> initFs() async {
-    users.doc('work').get().then((DocumentSnapshot documentSnapshot) {
+    users.doc(newUser.uid).get().then((DocumentSnapshot documentSnapshot) {
       if (documentSnapshot.exists) {
         setState(() {
           if (documentSnapshot.data().containsKey('wt')) {
@@ -34,13 +34,15 @@ class _MyHomePageState extends State<MyHomePage> {
             createFs();
           }
         });
+      } else {
+        createFs();
       }
     });
   }
 
   Future<void> createFs() async {
     users
-        .doc('work')
+        .doc(newUser.uid)
         .set({"wt": weight})
         .then((value) => print("Added new user"))
         .catchError((onError) => print("Err"));
@@ -113,20 +115,22 @@ class _MyHomePageState extends State<MyHomePage> {
     return tmp;
   }
 
-  //Clearing the Hive weight List
   void clearDB() {
     setState(() {
       weight.clear();
       _controller.clear();
       createFs();
-      // box.clear();
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("WT Tracker-Firebase"), centerTitle: true),
+      appBar: AppBar(
+        title: Text("WT Tracker-Firebase"),
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),

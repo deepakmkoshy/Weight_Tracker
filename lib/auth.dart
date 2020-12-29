@@ -8,6 +8,7 @@ String email;
 String imageUrl;
 auth.User newUser;
 String data = "Ho";
+auth.User userMain;
 
 Future<String> signInWithGoogle() async {
   final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
@@ -52,4 +53,16 @@ Future<String> signInWithGoogle() async {
 
 void signOutGoogle() async {
   await googleSignIn.signOut();
+  _auth.signOut();
+}
+
+Future<void> getCurrentUser() async {
+  userMain = _auth.currentUser;
+  String nam = userMain?.displayName ?? "Empty";
+  if (userMain != null) {
+    newUser = userMain;
+    name = userMain.displayName;
+  }
+  print("User:" + nam);
+  // return '$userMain';
 }

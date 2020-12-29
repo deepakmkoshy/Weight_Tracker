@@ -18,8 +18,6 @@ class _LoginState extends State<Login> {
     super.initState();
   }
 
-  void click() {}
-
   Widget googleLoginButton() {
     return OutlineButton(
       onPressed: () {
@@ -29,6 +27,10 @@ class _LoginState extends State<Login> {
               return MyHomePage();
             }));
           }
+        }).catchError((onError) {
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+            return Center(child: Text("Error"));
+          }));
         });
       },
       splashColor: Colors.grey,
@@ -40,7 +42,6 @@ class _LoginState extends State<Login> {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            
             Padding(
               padding: EdgeInsets.only(left: 10),
               child: Text(
