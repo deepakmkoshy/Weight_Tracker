@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wtfbtest/about.dart';
 import 'package:wtfbtest/auth.dart';
 import 'package:wtfbtest/loginNew.dart';
 
@@ -10,7 +11,6 @@ Widget drawer(BuildContext context) {
       children: <Widget>[
         Stack(
           children: <Widget>[
-            
             UserAccountsDrawerHeader(
                 accountName: Text(newUser.displayName),
                 accountEmail: Text(newUser.email),
@@ -42,26 +42,37 @@ Widget drawer(BuildContext context) {
           ],
         ),
         SizedBox(
-          height: 10,
+          height: 5,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-
-          children: <Widget>[
-            Padding(padding: EdgeInsets.only(left: 20)),
-            Icon(Icons.info_outline),
-            Padding(padding: EdgeInsets.only(left: 20)),
-            Text("About", style: TextStyle(fontSize: MediaQuery.of(context).size.height / 35)),
-          ],
+        FlatButton(
+          onPressed: () {
+            Navigator.pop(context);
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => About()));
+          },
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Padding(padding: EdgeInsets.only(left: 10)),
+              Icon(Icons.info_outline),
+              Padding(padding: EdgeInsets.only(left: 20)),
+              Text("About",
+                  style: TextStyle(
+                      fontSize: MediaQuery.of(context).size.height / 35)),
+            ],
+          ),
         ),
         SizedBox(
-          height: MediaQuery.of(context).size.height*0.6,
+          height: MediaQuery.of(context).size.height * 0.6,
         ),
-        Text("Weight Tracker", textAlign: TextAlign.center,),
-
-        Text("V0.3.0", textAlign: TextAlign.center,),
-
-
+        Text(
+          "Weight Tracker",
+          textAlign: TextAlign.center,
+        ),
+        Text(
+          "V0.3.0",
+          textAlign: TextAlign.center,
+        ),
       ],
     ),
   );

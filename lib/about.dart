@@ -14,21 +14,30 @@ class About extends StatelessWidget {
         style: Theme.of(context).textTheme.headline6,
         child: Container(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Center(
                   child: CircleAvatar(
-                      radius: 100,
+                      radius: 80,
                       backgroundImage:
                           AssetImage('assets/images/about_photo.jpg')),
                 ),
               ),
               Text(
-                "This app was developed by Deepak Mathews Koshy\n\n\n\n",
+                "This app was developed by Deepak Mathews Koshy",
                 textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height / 35
+                ),
               ),
-              Text("Weight Tracker V0.3.0"),
+              SizedBox(
+                height: MediaQuery.of(context).size.height*0.5,
+              ),
+              Text("Weight Tracker", style: TextStyle(fontSize: MediaQuery.of(context).size.height / 50),),
+              Text("V0.3.0", style: TextStyle(fontSize: MediaQuery.of(context).size.height / 50),),
+
             ],
           ),
         ),

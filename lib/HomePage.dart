@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:wtfbtest/Graph.dart';
 import 'package:wtfbtest/auth.dart';
 import 'package:wtfbtest/drawer.dart';
-import 'package:wtfbtest/loginNew.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
