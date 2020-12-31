@@ -1,9 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wtfbtest/Graph.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:wtfbtest/auth.dart';
-import 'package:wtfbtest/login.dart';
+import 'package:wtfbtest/loginNew.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -109,19 +109,22 @@ class _MyHomePageState extends State<MyHomePage> {
         child: ListView(
           children: <Widget>[
             Stack(children: <Widget>[
-              UserAccountsDrawerHeader(
-                  accountName: Text(newUser.displayName),
-                  accountEmail: Text(newUser.email),
-                  currentAccountPicture: CircleAvatar(
-                      backgroundImage: NetworkImage(newUser.photoURL))),
               Container(
-                margin: EdgeInsets.fromLTRB(width*0.45, 20, 0, 0),
+                
+                              child: UserAccountsDrawerHeader(
+                    accountName: Text(newUser.displayName),
+                    accountEmail: Text(newUser.email),
+                    currentAccountPicture: CircleAvatar(
+                        backgroundImage: NetworkImage(newUser.photoURL))),
+              ),
+              Container(
+                margin: EdgeInsets.fromLTRB(width*0.5, 20, 0, 0),
                 child: RaisedButton(
                   onPressed: () {
                     signOutGoogle();
                     Navigator.of(context).pushAndRemoveUntil(
                         MaterialPageRoute(builder: (context) {
-                      return Login();
+                      return LoginNew();
                     }), ModalRoute.withName('/'));
                   },
                   color: Colors.purpleAccent[70],

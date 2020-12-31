@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'package:wtfbtest/HomePage.dart';
 import 'package:wtfbtest/auth.dart';
-import 'login.dart';
+import 'package:wtfbtest/loginNew.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.purple,
 
           // For already logged in users, will skip the login page
-          navigateAfterSeconds: (userMain != null) ? MyHomePage() : Login(),
+          navigateAfterSeconds: (userMain != null) ? MyHomePage() : LoginNew(),
         ));
   }
 }
