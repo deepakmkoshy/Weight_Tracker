@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wtfbtest/Graph.dart';
 import 'package:wtfbtest/auth.dart';
+import 'package:wtfbtest/drawer.dart';
 import 'package:wtfbtest/loginNew.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -96,67 +97,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-  final width = MediaQuery.of(context).size.width;
-
 
     return Scaffold(
       appBar: AppBar(
         title: Text("WT Tracker-Firebase"),
         centerTitle: true,
-        // automaticallyImplyLeading: false,
       ),
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-            Stack(children: <Widget>[
-              Container(
-                
-                              child: UserAccountsDrawerHeader(
-                    accountName: Text(newUser.displayName),
-                    accountEmail: Text(newUser.email),
-                    currentAccountPicture: CircleAvatar(
-                        backgroundImage: NetworkImage(newUser.photoURL))),
-              ),
-              Container(
-                margin: EdgeInsets.fromLTRB(width*0.5, 20, 0, 0),
-                child: RaisedButton(
-                  onPressed: () {
-                    signOutGoogle();
-                    Navigator.of(context).pushAndRemoveUntil(
-                        MaterialPageRoute(builder: (context) {
-                      return LoginNew();
-                    }), ModalRoute.withName('/'));
-                  },
-                  color: Colors.purpleAccent[70],
-                  child: Padding(
-                    padding: const EdgeInsets.all(2.0),
-                    child: Text(
-                      'Logout',
-                      style: TextStyle(fontSize: 15, color: Colors.purple),
-                    ),
-                  ),
-                  elevation: 10,
-                  shape: RoundedRectangleBorder(
-                      // side: BorderSide(width: 1.0, color: Colors.deepPurple[900]),
-                      borderRadius: BorderRadius.circular(10)),
-                ),
-              ),
-            ]),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-
-              children: <Widget>[
-                Padding(padding: EdgeInsets.only(left: 20)),
-                Icon(Icons.info_outline),
-                Padding(padding: EdgeInsets.only(left: 20)),
-                Text("About", style: TextStyle(fontSize: 20)),
-              ],
-              //  title: Text('About'),
-              //  leading: Icon(Icons.info_outline),
-            )
-          ],
-        ),
-      ),
+      drawer: drawer(context), 
+      
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -251,7 +199,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: Theme.of(context)
                           .textTheme
                           .headline5
-                          .copyWith(color: Colors.white, fontSize: 25.0),
+                          .copyWith(color: Colors.white, 
+                          fontSize: MediaQuery.of(context).size.height / 35),
                     ),
                   ),
                 ),

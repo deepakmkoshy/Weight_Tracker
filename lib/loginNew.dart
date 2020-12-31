@@ -25,7 +25,6 @@ class _LoginNewState extends State<LoginNew> {
 
             Positioned(
               top: -MediaQuery.of(context).size.height * 0.2,
-              // right: -40,
               right: -MediaQuery.of(context).size.width * 0.1,
               child: Container(
                   height: MediaQuery.of(context).size.height * 0.6,
@@ -35,7 +34,6 @@ class _LoginNewState extends State<LoginNew> {
                         colors: <Color>[
                           Colors.purple,
                           Colors.deepPurpleAccent,
-                          // Colors.deepOrange,
                         ],
                       ),
                       color: Colors.purple,
@@ -57,9 +55,6 @@ class _LoginNewState extends State<LoginNew> {
                 )
               ],
             ),
-            // Positioned(
-            //   left: MediaQuery.of(context).size.width*0.43,
-            //   top: MediaQuery.of(context).size.height*0.35,
 
             Align(
               alignment: Alignment(0, -0.22),
@@ -80,9 +75,6 @@ class _LoginNewState extends State<LoginNew> {
               ),
             ),
 
-            // SizedBox(
-            //   height: 20,
-            // ),
             Align(
               alignment: Alignment(0, 0.1),
               child: Row(
@@ -101,7 +93,6 @@ class _LoginNewState extends State<LoginNew> {
                   Expanded(
                     child: Divider(
                       thickness: 1,
-                      // height: 5,
                       color: Colors.black,
                       indent: MediaQuery.of(context).size.width*0.05,
                       endIndent: MediaQuery.of(context).size.width*0.1,
