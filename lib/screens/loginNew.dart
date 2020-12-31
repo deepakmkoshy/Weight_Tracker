@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'HomePage.dart';
-import 'auth.dart';
+import '../components/auth.dart';
 
 class LoginNew extends StatefulWidget {
   LoginNew({Key key}) : super(key: key);

@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:wtfbtest/Graph.dart';
-import 'package:wtfbtest/auth.dart';
-import 'package:wtfbtest/drawer.dart';
+import 'package:wtfbtest/components/Graph.dart';
+import 'package:wtfbtest/components/auth.dart';
+import 'package:wtfbtest/screens/drawer.dart';
 
 class MyHomePage extends StatefulWidget {
   @override

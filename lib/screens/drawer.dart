@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:wtfbtest/about.dart';
-import 'package:wtfbtest/auth.dart';
-import 'package:wtfbtest/loginNew.dart';
+import 'package:wtfbtest/screens/about.dart';
+import 'package:wtfbtest/components/auth.dart';
+import 'package:wtfbtest/screens/loginNew.dart';
 
 Widget drawer(BuildContext context) {
   final width = MediaQuery.of(context).size.width;

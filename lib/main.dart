@@ -1,9 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
-import 'package:wtfbtest/HomePage.dart';
-import 'package:wtfbtest/auth.dart';
-import 'package:wtfbtest/loginNew.dart';
+import 'package:wtfbtest/screens/HomePage.dart';
+import 'package:wtfbtest/components/auth.dart';
+import 'package:wtfbtest/screens/loginNew.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

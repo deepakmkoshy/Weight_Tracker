@@ -25,6 +25,7 @@ class About extends StatelessWidget {
                           AssetImage('assets/images/about_photo.jpg')),
                 ),
               ),
+
               Text(
                 "This app was developed by Deepak Mathews Koshy",
                 textAlign: TextAlign.center,
@@ -32,9 +33,11 @@ class About extends StatelessWidget {
                   fontSize: MediaQuery.of(context).size.height / 35
                 ),
               ),
+
               SizedBox(
                 height: MediaQuery.of(context).size.height*0.5,
               ),
+              
               Text("Weight Tracker", style: TextStyle(fontSize: MediaQuery.of(context).size.height / 50),),
               Text("V0.3.0", style: TextStyle(fontSize: MediaQuery.of(context).size.height / 50),),
 
