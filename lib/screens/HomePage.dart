@@ -99,7 +99,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("WT Tracker-Firebase"),
+        title: Text("Weight Tracker",
+        style: Theme.of(context).textTheme.headline5.copyWith(
+          color: Colors.white
+        ),),
+        
         centerTitle: true,
       ),
       drawer: drawer(context), 
@@ -115,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Expanded(
                     child: TextField(
                       controller: _controller,
-                      style: Theme.of(context).textTheme.headline5,
+                      style: Theme.of(context).textTheme.headline6,
                       decoration: InputDecoration(
                         labelText: "Enter your current weight",
                         errorText: _showValidationError ? _errorMsg : null,

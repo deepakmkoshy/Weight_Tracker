@@ -20,7 +20,7 @@ class _LoginNewState extends State<LoginNew> {
             Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
-              color: Colors.grey[300],
+              color: Colors.grey[100],
             ),
 
             Positioned(
@@ -113,10 +113,10 @@ class _LoginNewState extends State<LoginNew> {
                       }));
                     }
                   }).catchError((onError) {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) {
-                      return Center(child: Text("Error"));
-                    }));
+                    // Navigator.of(context)
+                    //     .push(MaterialPageRoute(builder: (context) {
+                    //   return Center(child: Text("Error"));
+                    // }));
                   });
                 },
                 splashColor: Colors.grey,

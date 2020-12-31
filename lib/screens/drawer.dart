@@ -12,8 +12,13 @@ Widget drawer(BuildContext context) {
         Stack(
           children: <Widget>[
             UserAccountsDrawerHeader(
-                accountName: Text(newUser.displayName),
-                accountEmail: Text(newUser.email),
+                accountName: Text(newUser.displayName,
+                style: Theme.of(context).textTheme.headline6.copyWith(
+          color: Colors.white
+        ),),
+                accountEmail: Text(newUser.email,
+                style: Theme.of(context).textTheme.subtitle2.copyWith(
+          color: Colors.white),),
                 currentAccountPicture: CircleAvatar(
                     backgroundImage: NetworkImage(newUser.photoURL))),
             Container(
@@ -31,7 +36,11 @@ Widget drawer(BuildContext context) {
                   padding: const EdgeInsets.all(2.0),
                   child: Text(
                     'Logout',
-                    style: TextStyle(fontSize: 15, color: Colors.purple),
+                    style: Theme.of(context).textTheme.bodyText1.copyWith(
+                      color: Colors.purple,
+                      fontWeight: FontWeight.w800,
+                      fontSize: 15
+                    ),
                   ),
                 ),
                 elevation: 10,
@@ -57,8 +66,10 @@ Widget drawer(BuildContext context) {
               Icon(Icons.info_outline),
               Padding(padding: EdgeInsets.only(left: 20)),
               Text("About",
-                  style: TextStyle(
-                      fontSize: MediaQuery.of(context).size.height / 35)),
+                  style: Theme.of(context).textTheme.headline5.copyWith(
+                      fontSize: MediaQuery.of(context).size.height / 35,
+                  )
+                      ),
             ],
           ),
         ),
@@ -70,7 +81,7 @@ Widget drawer(BuildContext context) {
           textAlign: TextAlign.center,
         ),
         Text(
-          "V0.3.0",
+          "v0.3.0",
           textAlign: TextAlign.center,
         ),
       ],
