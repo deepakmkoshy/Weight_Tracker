@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wtfbtest/constants.dart';
 
 import 'HomePage.dart';
 import '../components/auth.dart';
@@ -13,22 +14,26 @@ class LoginNew extends StatefulWidget {
 class _LoginNewState extends State<LoginNew> {
   @override
   Widget build(BuildContext context) {
+
+    final width = MediaQuery.of(context).size.width;
+  final height = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Container(
         child: Stack(
           children: <Widget>[
             Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
+              width: width,
+              height: height,
               color: Colors.grey[100],
             ),
 
             Positioned(
-              top: -MediaQuery.of(context).size.height * 0.2,
-              right: -MediaQuery.of(context).size.width * 0.1,
+              top: -height * 0.2,
+              right: -width * 0.1,
               child: Container(
-                  height: MediaQuery.of(context).size.height * 0.6,
-                  width: MediaQuery.of(context).size.width * 1.2,
+                  height: height * 0.6,
+                  width: width * 1.2,
                   decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: <Color>[
@@ -47,7 +52,7 @@ class _LoginNewState extends State<LoginNew> {
                   child: Text(
                     'Weight Tracker',
                     style: TextStyle(
-                      fontSize: MediaQuery.of(context).size.height / 20,
+                      fontSize: height / 20,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
@@ -69,8 +74,8 @@ class _LoginNewState extends State<LoginNew> {
                     border: Border.all(width: 5, color: Colors.white),
                     borderRadius: BorderRadius.all(Radius.circular(10))),
                 child: Image(
-                  image: AssetImage("assets/icons/weight-scale.png"),
-                  width: MediaQuery.of(context).size.height * 0.1,
+                  image: AssetImage(logoURL),
+                  width: height * 0.1,
                 ),
               ),
             ),
@@ -84,18 +89,18 @@ class _LoginNewState extends State<LoginNew> {
                     child: Divider(
                       thickness: 1,
                       color: Colors.black,
-                      indent: MediaQuery.of(context).size.width*0.1,
-                      endIndent: MediaQuery.of(context).size.width*0.05,
+                      indent: width*0.1,
+                      endIndent: width*0.05,
                     ),
                   ),
-                  Text("Sign in",style: TextStyle(fontSize: MediaQuery.of(context).size.height / 40, 
+                  Text("Sign in",style: TextStyle(fontSize: height / 40, 
                   ),),
                   Expanded(
                     child: Divider(
                       thickness: 1,
                       color: Colors.black,
-                      indent: MediaQuery.of(context).size.width*0.05,
-                      endIndent: MediaQuery.of(context).size.width*0.1,
+                      indent: width*0.05,
+                      endIndent: width*0.1,
                     ),
                   ),
                 ],
@@ -113,10 +118,7 @@ class _LoginNewState extends State<LoginNew> {
                       }));
                     }
                   }).catchError((onError) {
-                    // Navigator.of(context)
-                    //     .push(MaterialPageRoute(builder: (context) {
-                    //   return Center(child: Text("Error"));
-                    // }));
+                   
                   });
                 },
                 splashColor: Colors.grey,
@@ -131,7 +133,7 @@ class _LoginNewState extends State<LoginNew> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Image(
-                          image: AssetImage("assets/icons/google_logo.png"),
+                          image: AssetImage(googleLogo),
                           height: 35.0),
                       Padding(
                         padding: EdgeInsets.only(left: 10),
@@ -151,40 +153,9 @@ class _LoginNewState extends State<LoginNew> {
 
             Align(
               alignment: Alignment(0,0.9),
-              child: Text("V 0.3.0"),
+              child: Text(ver),
             )
-            // Column(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: [
-            //     Row(
-            //       mainAxisAlignment: MainAxisAlignment.center,
-            //       children: <Widget>[
-            //         ClipRRect(
-            //           borderRadius: BorderRadius.all(Radius.circular(20)),
-            //           child: Container(
-            //              height: MediaQuery.of(context).size.height * 0.6,
-            // width: MediaQuery.of(context).size.width * 0.8,
-            // decoration: BoxDecoration(
-            //   color: Colors.white,
-            // ),
-            // child: Column(
-            //     mainAxisAlignment: MainAxisAlignment.center,
-            //   crossAxisAlignment: CrossAxisAlignment.center,
-            //   children: <Widget>[
-            //     Row(
-            //       mainAxisAlignment: MainAxisAlignment.center,
-            //       children: <Widget>[
-            //         Text(
-            //           "Login",
-            //           style: TextStyle(
-            //             fontSize: MediaQuery.of(context).size.height / 30,))])
-            // ],),
-            //           ),
-            //         )
-            //       ],
-            //     )
-            //   ],
-            // )
+            
           ],
         ),
       ),

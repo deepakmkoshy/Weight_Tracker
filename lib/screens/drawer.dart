@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:wtfbtest/constants.dart';
 import 'package:wtfbtest/screens/about.dart';
 import 'package:wtfbtest/components/auth.dart';
 import 'package:wtfbtest/screens/loginNew.dart';
 
 Widget drawer(BuildContext context) {
   final width = MediaQuery.of(context).size.width;
+  final height = MediaQuery.of(context).size.height;
 
   return Drawer(
     child: ListView(
@@ -67,21 +69,21 @@ Widget drawer(BuildContext context) {
               Padding(padding: EdgeInsets.only(left: 20)),
               Text("About",
                   style: Theme.of(context).textTheme.headline5.copyWith(
-                      fontSize: MediaQuery.of(context).size.height / 35,
+                      fontSize: height / 35,
                   )
                       ),
             ],
           ),
         ),
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.6,
+          height: height * 0.6,
         ),
         Text(
           "Weight Tracker",
           textAlign: TextAlign.center,
         ),
         Text(
-          "v0.3.0",
+          ver,
           textAlign: TextAlign.center,
         ),
       ],

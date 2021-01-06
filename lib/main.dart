@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:splashscreen/splashscreen.dart';
+import 'package:wtfbtest/constants.dart';
 import 'package:wtfbtest/screens/HomePage.dart';
 import 'package:wtfbtest/components/auth.dart';
 import 'package:wtfbtest/screens/loginNew.dart';
@@ -16,16 +17,10 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Map<String, Widget Function(BuildContext)> routes = {
-    //   '/': (context) => LoginNew(),
-    //   '/home': (context) =>MyHomePage(),
-    //         '/about': (context) => About()
-    //       };
           
           return MaterialApp(
               title: 'Weight Tracker',
               debugShowCheckedModeBanner: false,
-              // routes: routes,
               theme: ThemeData(
          
                 textTheme:GoogleFonts.montserratTextTheme(Theme.of(context).textTheme),
@@ -34,7 +29,7 @@ class MyApp extends StatelessWidget {
               home: SplashScreen(
                 seconds: 1,
                 photoSize: 40,
-                image: Image.asset('assets/icons/weight-scale.png'),
+                image: Image.asset(logoURL),
       
                 title: Text(
                   'Welcome to \nWeight Tracker',
