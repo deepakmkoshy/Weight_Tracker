@@ -113,6 +113,9 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: <Widget>[
+              SizedBox(
+                    height: MediaQuery.of(context).size.height*0.01,
+                  ),
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
@@ -129,6 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       keyboardType: TextInputType.number,
                     ),
                   ),
+                  
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Ink(
@@ -159,6 +163,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ],
               ),
+              SizedBox(
+                    height: MediaQuery.of(context).size.height*0.01,
+                  ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
                 child: Container(
@@ -174,6 +181,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
+              SizedBox(
+                    height: MediaQuery.of(context).size.height*0.01,
+                  ),
               Graph(weight),
               Padding(
                 padding: const EdgeInsets.only(top: 8.0),
