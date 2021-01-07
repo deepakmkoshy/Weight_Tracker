@@ -22,13 +22,27 @@ Added logos, launcher icon, splash screen, changed app name.
 
 The main homepage is now messy, as I added user display name and signout button for debugging. Have to fix that by adding sidebar and moving user details there. 
 
+### 07-01-2020
+
+The project is complete for now. Moved the user details to drawer and added a neat logout button there. Changed font to montserrat. 
+
+Added an awesome login page. Modified the minor UI details to look more presentable. Refactored the code.
+
+Screenshots:
+<p align="center">
+  <img src="screenshots/LoginPage.png" width="256" hspace="4">
+  <img src="screenshots/HomePage.png" width="256" hspace="4">
+  <img src="screenshots/Drawer.png" width="256" hspace="4">
+  
+</p>
+
 ## ToDo
 
-* Update the sidebar to include the logged in user details
-* Add more features like BMI calculator etc(by using 3rd party API's)
-* Fix routing
+* Add more features like BMI calculator etc(by using 3rd party API's)- Maybe create my own API for learning purpose in future
 * Back button on homepage shouldn't pop to login screen
 
 ## Done
 
 * Implemented Google sign in
+* Update the sidebar to include the logged in user details
+* Fix routing- Tried but couldn't do it
