@@ -9,6 +9,7 @@ This is a Weight tracking application developed using Flutter with Firebase as b
   <img src="screenshots/LoginPage.png" width="256" hspace="4">
   <img src="screenshots/HomePage.png" width="256" hspace="4">
   <img src="screenshots/Drawer.png" width="256" hspace="4">
+  <img src="screenshots/HomePage with Data.png" width="256" hspace="4">
 </p>
 
 ## Packages Used:
